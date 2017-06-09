@@ -1,6 +1,6 @@
 FROM php:7.0-apache
 
-MAINTAINER Minho <longfei6671@163.com>
+MAINTAINER hui <huiyao351@163.com>
 
 ADD conf/php.ini /usr/local/etc/php/php.ini
 ADD conf/vhosts.conf /etc/apache2/sites-enabled/vhosts.conf
@@ -35,11 +35,10 @@ RUN curl -sS https://getcomposer.org/installer | php \
 	&& mv composer.phar /usr/local/bin/composer
 
 
-RUN git clone https://github.com/lifei6671/SmartWiki.git \
-	&& cp -r SmartWiki/. /var/www/html \
+RUN git clone https://github.com/huiyao351/orgdev.git \
+	&& cp -r orgdev/. /var/www/html \
 	&& chmod -R 0777 /var/www/html \
 	&& cd /var/www/html/ \
-	&& mv .env.example .env \
 	&& composer install \
 	&& php artisan clear-compiled \
 	&& php artisan optimize \
