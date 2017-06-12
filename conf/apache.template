@@ -1,4 +1,4 @@
-<VirtualHost *:80>
+<VirtualHost *:8080>
     DocumentRoot "/var/www/html/public"
 	#配置为自己的域名
     ServerName {HOST}
